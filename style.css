@@ -27,7 +27,7 @@ body {
   padding: 2rem;
   animation: fadeIn 5s ease forwards;
   opacity: 0;
-  background: linear-gradient(45deg, #080808, #ec9f05);
+  background: linear-gradient(45deg, #080808, #080808);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
