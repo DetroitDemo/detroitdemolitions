@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detroit Demolitions LLC</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">Detroit Demolitions</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="quote-slider">
+      <div class="quote">"Precision. Power. Performance."</div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At Detroit Demolitions LLC, we bring muscle, precision, and experience to every project. From residential tear-downs to commercial site prep, we’re trusted across Detroit for fast, safe, and clean demolition services. Our team is licensed, insured, and committed to helping rebuild the city—one structure at a time.</p>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1619020004473-6eb0f6a2495b?auto=format&fit=crop&w=600&q=80" alt="Demolition 1">
+      <img src="https://images.unsplash.com/photo-1619114425151-9e749c2ae4f3?auto=format&fit=crop&w=600&q=80" alt="Demolition 2">
+      <img src="https://images.unsplash.com/photo-1601233693468-87243c238de6?auto=format&fit=crop&w=600&q=80" alt="Demolition 3">
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:detroitdemolitions@gmail.com">detroitdemolitions@gmail.com</a></p>
+    <p>Phone: <a href="tel:+13138082000">313-808-2000</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Detroit Demolitions LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
