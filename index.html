@@ -4,7 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <style>
+    #photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    #photos img {
+      max-width: 100%;
+      width: 300px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #photos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
@@ -16,19 +66,44 @@
     <p>Detroit Demolitions LLC is committed to transforming Detroit’s skyline safely and efficiently. With decades of experience, our team leads the way in responsible demolition practices and urban renewal.</p>
   </section>
 
+  <!-- Image Section -->
+  <section id="photos">
+    <img src="https://i.postimg.cc/9MZyQF1L/file-000000002de861f7b31a5cedb090f2ca-1-1-1-1-1.jpg" alt="Demo Photo 1" onclick="openLightbox(this.src)">
+    <img src="https://i.postimg.cc/Y0xgQn5g/file-000000004b1861fd9f065f00f1ed5007-1-1.jpg" alt="Demo Photo 2" onclick="openLightbox(this.src)">
+    <img src="https://i.postimg.cc/659CBKZh/file-0000000047ec61f7a0e176de1b12664e-1-1.jpg" alt="Demo Photo 3" onclick="openLightbox(this.src)">
+  </section>
+
+  <!-- Lightbox container -->
+  <div class="lightbox" id="lightbox">
+    <a href="#" class="lightbox-close" onclick="closeLightbox()">&times;</a>
+    <img id="lightbox-img" src="" alt="Enlarged Photo">
+  </div>
+
   <section id="testimonials">
     <h2>Testimonials</h2>
     <blockquote>"Professional and fast. They turned our teardown into an easy process!" – Sarah J.</blockquote>
     <blockquote>"Detroit Demolitions got the job done right, on time and under budget." – Mike T.</blockquote>
-    <blockquote>"“These guys don’t mess around. Fast, clean, and all Detroit. They got it done." – Sam A.</blockquote>
+    <blockquote>"These guys don’t mess around. Fast, clean, and all Detroit. They got it done." – Sam A.</blockquote>
   </section>
 
-    <section id="The Tean">
+  <section id="The Tean"></section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:detroitdemolitions@gmail.com">detroitdemolitions@gmail.com</a></p>
-    <p>Phone: <a href="tel:3138082000">313-808-2000</a></p>
   </section>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </body>
 </html>
